@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AogirishopModelStoreContainer" CdmEntityContainer="AogirishopEntities">
+    <EntitySetMapping Name="N412_Account">
+      <EntityTypeMapping TypeName="AogirishopModel.N412_Account">
+        <MappingFragment StoreEntitySet="N412_Account">
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Account_FirstName" ColumnName="Account_FirstName" />
+          <ScalarProperty Name="Account_LastName" ColumnName="Account_LastName" />
+          <ScalarProperty Name="Account_Email" ColumnName="Account_Email" />
+          <ScalarProperty Name="Account_UserName" ColumnName="Account_UserName" />
+          <ScalarProperty Name="Account_Password" ColumnName="Account_Password" />
+          <ScalarProperty Name="Account_Rule" ColumnName="Account_Rule" />
+          <ScalarProperty Name="Account_Status" ColumnName="Account_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="N412_Ads">
+      <EntityTypeMapping TypeName="AogirishopModel.N412_Ads">
+        <MappingFragment StoreEntitySet="N412_Ads">
+          <ScalarProperty Name="Ads_ID" ColumnName="Ads_ID" />
+          <ScalarProperty Name="Ads_Title" ColumnName="Ads_Title" />
+          <ScalarProperty Name="Ads_Detail" ColumnName="Ads_Detail" />
+          <ScalarProperty Name="Ads_Positon" ColumnName="Ads_Positon" />
+          <ScalarProperty Name="Ads_STT" ColumnName="Ads_STT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="N412_GroupProduct">
+      <EntityTypeMapping TypeName="AogirishopModel.N412_GroupProduct">
+        <MappingFragment StoreEntitySet="N412_GroupProduct">
+          <ScalarProperty Name="GroupProduct_Status" ColumnName="GroupProduct_Status" />
+          <ScalarProperty Name="GroupProduct_STT" ColumnName="GroupProduct_STT" />
+          <ScalarProperty Name="GroupProduct_ID" ColumnName="GroupProduct_ID" />
+          <ScalarProperty Name="GroupProduct_Name" ColumnName="GroupProduct_Name" />
+          <ScalarProperty Name="GroupProduct_Image" ColumnName="GroupProduct_Image" />
+          <ScalarProperty Name="GroupProduct_Link" ColumnName="GroupProduct_Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="N412_Menu">
+      <EntityTypeMapping TypeName="AogirishopModel.N412_Menu">
+        <MappingFragment StoreEntitySet="N412_Menu">
+          <ScalarProperty Name="Menu_ID" ColumnName="Menu_ID" />
+          <ScalarProperty Name="Menu_Name" ColumnName="Menu_Name" />
+          <ScalarProperty Name="Menu_Position" ColumnName="Menu_Position" />
+          <ScalarProperty Name="Menu_ParentID" ColumnName="Menu_ParentID" />
+          <ScalarProperty Name="Menu_Link" ColumnName="Menu_Link" />
+          <ScalarProperty Name="Menu_Status" ColumnName="Menu_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="N412_Order">
+      <EntityTypeMapping TypeName="AogirishopModel.N412_Order">
+        <MappingFragment StoreEntitySet="N412_Order">
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Order_Name" ColumnName="Order_Name" />
+          <ScalarProperty Name="Order_Customer" ColumnName="Order_Customer" />
+          <ScalarProperty Name="Order_Email" ColumnName="Order_Email" />
+          <ScalarProperty Name="Order_Tel" ColumnName="Order_Tel" />
+          <ScalarProperty Name="Order_TotalMoney" ColumnName="Order_TotalMoney" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="Order_Note" ColumnName="Order_Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="N412_OrderDetail">
+      <EntityTypeMapping TypeName="AogirishopModel.N412_OrderDetail">
+        <MappingFragment StoreEntitySet="N412_OrderDetail">
+          <ScalarProperty Name="OrderDetail_ID" ColumnName="OrderDetail_ID" />
+          <ScalarProperty Name="OrderDetail_Product" ColumnName="OrderDetail_Product" />
+          <ScalarProperty Name="OrderDetail_OrderID" ColumnName="OrderDetail_OrderID" />
+          <ScalarProperty Name="OrderDetail_Quantity" ColumnName="OrderDetail_Quantity" />
+          <ScalarProperty Name="OrderDetail_Date" ColumnName="OrderDetail_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="N412_Post">
+      <EntityTypeMapping TypeName="AogirishopModel.N412_Post">
+        <MappingFragment StoreEntitySet="N412_Post">
+          <ScalarProperty Name="Post_ID" ColumnName="Post_ID" />
+          <ScalarProperty Name="Post_Title" ColumnName="Post_Title" />
+          <ScalarProperty Name="Post_Description" ColumnName="Post_Description" />
+          <ScalarProperty Name="Post_Detail" ColumnName="Post_Detail" />
+          <ScalarProperty Name="Post_Image" ColumnName="Post_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="N412_Product">
+      <EntityTypeMapping TypeName="AogirishopModel.N412_Product">
+        <MappingFragment StoreEntitySet="N412_Product">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Product_Price" ColumnName="Product_Price" />
+          <ScalarProperty Name="Product_PriceNew" ColumnName="Product_PriceNew" />
+          <ScalarProperty Name="Product_Image" ColumnName="Product_Image" />
+          <ScalarProperty Name="Product_Detail" ColumnName="Product_Detail" />
+          <ScalarProperty Name="Product_Description" ColumnName="Product_Description" />
+          <ScalarProperty Name="Product_Country" ColumnName="Product_Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

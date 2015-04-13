@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AogirishopModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AogirishopEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="N412_Account" EntityType="AogirishopModel.N412_Account" />
+    <EntitySet Name="N412_Ads" EntityType="AogirishopModel.N412_Ads" />
+    <EntitySet Name="N412_GroupProduct" EntityType="AogirishopModel.N412_GroupProduct" />
+    <EntitySet Name="N412_Menu" EntityType="AogirishopModel.N412_Menu" />
+    <EntitySet Name="N412_Order" EntityType="AogirishopModel.N412_Order" />
+    <EntitySet Name="N412_OrderDetail" EntityType="AogirishopModel.N412_OrderDetail" />
+    <EntitySet Name="N412_Post" EntityType="AogirishopModel.N412_Post" />
+    <EntitySet Name="N412_Product" EntityType="AogirishopModel.N412_Product" />
+  </EntityContainer>
+  <EntityType Name="N412_Account">
+    <Key>
+      <PropertyRef Name="Account_ID" />
+    </Key>
+    <Property Name="Account_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Account_FirstName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Account_LastName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Account_Email" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Account_UserName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Account_Password" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Account_Rule" Type="Int32" />
+    <Property Name="Account_Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="N412_Ads">
+    <Key>
+      <PropertyRef Name="Ads_ID" />
+    </Key>
+    <Property Name="Ads_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Ads_Title" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Ads_Detail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Ads_Positon" Type="Int32" />
+    <Property Name="Ads_STT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="N412_GroupProduct">
+    <Key>
+      <PropertyRef Name="GroupProduct_ID" />
+    </Key>
+    <Property Name="GroupProduct_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupProduct_Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="GroupProduct_Image" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="GroupProduct_Link" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="GroupProduct_STT" />
+    <Property Type="Boolean" Name="GroupProduct_Status" />
+  </EntityType>
+  <EntityType Name="N412_Menu">
+    <Key>
+      <PropertyRef Name="Menu_ID" />
+    </Key>
+    <Property Name="Menu_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Menu_Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Menu_Position" Type="Int32" />
+    <Property Name="Menu_ParentID" Type="Int32" />
+    <Property Name="Menu_Link" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Menu_Status" Type="Int64" />
+  </EntityType>
+  <EntityType Name="N412_Order">
+    <Key>
+      <PropertyRef Name="Order_ID" />
+    </Key>
+    <Property Name="Order_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Order_Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Order_Customer" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Order_Email" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Order_Tel" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Order_TotalMoney" Type="Double" />
+    <Property Name="Order_Date" Type="DateTime" Precision="3" />
+    <Property Name="Order_Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="N412_OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetail_ID" />
+    </Key>
+    <Property Name="OrderDetail_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDetail_Product" Type="Int32" />
+    <Property Name="OrderDetail_OrderID" Type="Int32" />
+    <Property Name="OrderDetail_Quantity" Type="Int32" />
+    <Property Name="OrderDetail_Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="N412_Post">
+    <Key>
+      <PropertyRef Name="Post_ID" />
+    </Key>
+    <Property Name="Post_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Post_Title" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Post_Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Post_Detail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Post_Image" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="N412_Product">
+    <Key>
+      <PropertyRef Name="Product_ID" />
+    </Key>
+    <Property Name="Product_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Product_Price" Type="Double" />
+    <Property Name="Product_PriceNew" Type="Double" />
+    <Property Name="Product_Image" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Product_Detail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Product_Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Product_Country" Type="Int32" />
+  </EntityType>
+</Schema>

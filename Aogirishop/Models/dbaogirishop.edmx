@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AogirishopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="AogirishopModelStoreContainer">
+          <EntitySet Name="N412_Account" EntityType="AogirishopModel.Store.N412_Account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="N412_Ads" EntityType="AogirishopModel.Store.N412_Ads" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="N412_GroupProduct" EntityType="AogirishopModel.Store.N412_GroupProduct" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="N412_Menu" EntityType="AogirishopModel.Store.N412_Menu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="N412_Order" EntityType="AogirishopModel.Store.N412_Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="N412_OrderDetail" EntityType="AogirishopModel.Store.N412_OrderDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="N412_Post" EntityType="AogirishopModel.Store.N412_Post" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="N412_Product" EntityType="AogirishopModel.Store.N412_Product" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="N412_Account">
+          <Key>
+            <PropertyRef Name="Account_ID" />
+          </Key>
+          <Property Name="Account_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Account_FirstName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Account_LastName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Account_Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Account_UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Account_Password" Type="varchar" MaxLength="500" />
+          <Property Name="Account_Rule" Type="int" />
+          <Property Name="Account_Status" Type="int" />
+        </EntityType>
+        <EntityType Name="N412_Ads">
+          <Key>
+            <PropertyRef Name="Ads_ID" />
+          </Key>
+          <Property Name="Ads_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Ads_Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Ads_Detail" Type="ntext" />
+          <Property Name="Ads_Positon" Type="int" />
+          <Property Name="Ads_STT" Type="int" />
+        </EntityType>
+        <EntityType Name="N412_GroupProduct">
+          <Key>
+            <PropertyRef Name="GroupProduct_ID" />
+          </Key>
+          <Property Name="GroupProduct_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GroupProduct_Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="GroupProduct_Image" Type="nvarchar" MaxLength="500" />
+          <Property Name="GroupProduct_Link" Type="nvarchar" MaxLength="500" />
+          <Property Name="GroupProduct_STT" Type="int" />
+          <Property Name="GroupProduct_Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="N412_Menu">
+          <Key>
+            <PropertyRef Name="Menu_ID" />
+          </Key>
+          <Property Name="Menu_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Menu_Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Menu_Position" Type="int" />
+          <Property Name="Menu_ParentID" Type="int" />
+          <Property Name="Menu_Link" Type="nvarchar" MaxLength="500" />
+          <Property Name="Menu_Status" Type="bigint" />
+        </EntityType>
+        <EntityType Name="N412_Order">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Order_Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Order_Customer" Type="nvarchar" MaxLength="500" />
+          <Property Name="Order_Email" Type="varchar" MaxLength="500" />
+          <Property Name="Order_Tel" Type="varchar" MaxLength="20" />
+          <Property Name="Order_TotalMoney" Type="float" />
+          <Property Name="Order_Date" Type="datetime" />
+          <Property Name="Order_Note" Type="ntext" />
+        </EntityType>
+        <EntityType Name="N412_OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetail_ID" />
+          </Key>
+          <Property Name="OrderDetail_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDetail_Product" Type="int" />
+          <Property Name="OrderDetail_OrderID" Type="int" />
+          <Property Name="OrderDetail_Quantity" Type="int" />
+          <Property Name="OrderDetail_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="N412_Post">
+          <Key>
+            <PropertyRef Name="Post_ID" />
+          </Key>
+          <Property Name="Post_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Post_Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Post_Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Post_Detail" Type="ntext" />
+          <Property Name="Post_Image" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="N412_Product">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+          </Key>
+          <Property Name="Product_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Product_Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Product_Price" Type="float" />
+          <Property Name="Product_PriceNew" Type="float" />
+          <Property Name="Product_Image" Type="nvarchar" MaxLength="500" />
+          <Property Name="Product_Detail" Type="ntext" />
+          <Property Name="Product_Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Product_Country" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AogirishopModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AogirishopEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="N412_Account" EntityType="AogirishopModel.N412_Account" />
+          <EntitySet Name="N412_Ads" EntityType="AogirishopModel.N412_Ads" />
+          <EntitySet Name="N412_GroupProduct" EntityType="AogirishopModel.N412_GroupProduct" />
+          <EntitySet Name="N412_Menu" EntityType="AogirishopModel.N412_Menu" />
+          <EntitySet Name="N412_Order" EntityType="AogirishopModel.N412_Order" />
+          <EntitySet Name="N412_OrderDetail" EntityType="AogirishopModel.N412_OrderDetail" />
+          <EntitySet Name="N412_Post" EntityType="AogirishopModel.N412_Post" />
+          <EntitySet Name="N412_Product" EntityType="AogirishopModel.N412_Product" />
+        </EntityContainer>
+        <EntityType Name="N412_Account">
+          <Key>
+            <PropertyRef Name="Account_ID" />
+          </Key>
+          <Property Name="Account_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Account_FirstName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Account_LastName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Account_Email" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Account_UserName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Account_Password" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Account_Rule" Type="Int32" />
+          <Property Name="Account_Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="N412_Ads">
+          <Key>
+            <PropertyRef Name="Ads_ID" />
+          </Key>
+          <Property Name="Ads_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Ads_Title" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Ads_Detail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Ads_Positon" Type="Int32" />
+          <Property Name="Ads_STT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="N412_GroupProduct">
+          <Key>
+            <PropertyRef Name="GroupProduct_ID" />
+          </Key>
+          <Property Name="GroupProduct_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupProduct_Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="GroupProduct_Image" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="GroupProduct_Link" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="GroupProduct_STT" />
+          <Property Type="Boolean" Name="GroupProduct_Status" />
+        </EntityType>
+        <EntityType Name="N412_Menu">
+          <Key>
+            <PropertyRef Name="Menu_ID" />
+          </Key>
+          <Property Name="Menu_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Menu_Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Menu_Position" Type="Int32" />
+          <Property Name="Menu_ParentID" Type="Int32" />
+          <Property Name="Menu_Link" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Menu_Status" Type="Int64" />
+        </EntityType>
+        <EntityType Name="N412_Order">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Order_Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Order_Customer" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Order_Email" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Order_Tel" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Order_TotalMoney" Type="Double" />
+          <Property Name="Order_Date" Type="DateTime" Precision="3" />
+          <Property Name="Order_Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="N412_OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetail_ID" />
+          </Key>
+          <Property Name="OrderDetail_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDetail_Product" Type="Int32" />
+          <Property Name="OrderDetail_OrderID" Type="Int32" />
+          <Property Name="OrderDetail_Quantity" Type="Int32" />
+          <Property Name="OrderDetail_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="N412_Post">
+          <Key>
+            <PropertyRef Name="Post_ID" />
+          </Key>
+          <Property Name="Post_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Post_Title" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Post_Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Post_Detail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Post_Image" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="N412_Product">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+          </Key>
+          <Property Name="Product_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Product_Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Product_Price" Type="Double" />
+          <Property Name="Product_PriceNew" Type="Double" />
+          <Property Name="Product_Image" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Product_Detail" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Product_Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Product_Country" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AogirishopModelStoreContainer" CdmEntityContainer="AogirishopEntities">
+          <EntitySetMapping Name="N412_Account">
+            <EntityTypeMapping TypeName="AogirishopModel.N412_Account">
+              <MappingFragment StoreEntitySet="N412_Account">
+                <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+                <ScalarProperty Name="Account_FirstName" ColumnName="Account_FirstName" />
+                <ScalarProperty Name="Account_LastName" ColumnName="Account_LastName" />
+                <ScalarProperty Name="Account_Email" ColumnName="Account_Email" />
+                <ScalarProperty Name="Account_UserName" ColumnName="Account_UserName" />
+                <ScalarProperty Name="Account_Password" ColumnName="Account_Password" />
+                <ScalarProperty Name="Account_Rule" ColumnName="Account_Rule" />
+                <ScalarProperty Name="Account_Status" ColumnName="Account_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="N412_Ads">
+            <EntityTypeMapping TypeName="AogirishopModel.N412_Ads">
+              <MappingFragment StoreEntitySet="N412_Ads">
+                <ScalarProperty Name="Ads_ID" ColumnName="Ads_ID" />
+                <ScalarProperty Name="Ads_Title" ColumnName="Ads_Title" />
+                <ScalarProperty Name="Ads_Detail" ColumnName="Ads_Detail" />
+                <ScalarProperty Name="Ads_Positon" ColumnName="Ads_Positon" />
+                <ScalarProperty Name="Ads_STT" ColumnName="Ads_STT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="N412_GroupProduct">
+            <EntityTypeMapping TypeName="AogirishopModel.N412_GroupProduct">
+              <MappingFragment StoreEntitySet="N412_GroupProduct">
+                <ScalarProperty Name="GroupProduct_Status" ColumnName="GroupProduct_Status" />
+                <ScalarProperty Name="GroupProduct_STT" ColumnName="GroupProduct_STT" />
+                <ScalarProperty Name="GroupProduct_ID" ColumnName="GroupProduct_ID" />
+                <ScalarProperty Name="GroupProduct_Name" ColumnName="GroupProduct_Name" />
+                <ScalarProperty Name="GroupProduct_Image" ColumnName="GroupProduct_Image" />
+                <ScalarProperty Name="GroupProduct_Link" ColumnName="GroupProduct_Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="N412_Menu">
+            <EntityTypeMapping TypeName="AogirishopModel.N412_Menu">
+              <MappingFragment StoreEntitySet="N412_Menu">
+                <ScalarProperty Name="Menu_ID" ColumnName="Menu_ID" />
+                <ScalarProperty Name="Menu_Name" ColumnName="Menu_Name" />
+                <ScalarProperty Name="Menu_Position" ColumnName="Menu_Position" />
+                <ScalarProperty Name="Menu_ParentID" ColumnName="Menu_ParentID" />
+                <ScalarProperty Name="Menu_Link" ColumnName="Menu_Link" />
+                <ScalarProperty Name="Menu_Status" ColumnName="Menu_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="N412_Order">
+            <EntityTypeMapping TypeName="AogirishopModel.N412_Order">
+              <MappingFragment StoreEntitySet="N412_Order">
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="Order_Name" ColumnName="Order_Name" />
+                <ScalarProperty Name="Order_Customer" ColumnName="Order_Customer" />
+                <ScalarProperty Name="Order_Email" ColumnName="Order_Email" />
+                <ScalarProperty Name="Order_Tel" ColumnName="Order_Tel" />
+                <ScalarProperty Name="Order_TotalMoney" ColumnName="Order_TotalMoney" />
+                <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+                <ScalarProperty Name="Order_Note" ColumnName="Order_Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="N412_OrderDetail">
+            <EntityTypeMapping TypeName="AogirishopModel.N412_OrderDetail">
+              <MappingFragment StoreEntitySet="N412_OrderDetail">
+                <ScalarProperty Name="OrderDetail_ID" ColumnName="OrderDetail_ID" />
+                <ScalarProperty Name="OrderDetail_Product" ColumnName="OrderDetail_Product" />
+                <ScalarProperty Name="OrderDetail_OrderID" ColumnName="OrderDetail_OrderID" />
+                <ScalarProperty Name="OrderDetail_Quantity" ColumnName="OrderDetail_Quantity" />
+                <ScalarProperty Name="OrderDetail_Date" ColumnName="OrderDetail_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="N412_Post">
+            <EntityTypeMapping TypeName="AogirishopModel.N412_Post">
+              <MappingFragment StoreEntitySet="N412_Post">
+                <ScalarProperty Name="Post_ID" ColumnName="Post_ID" />
+                <ScalarProperty Name="Post_Title" ColumnName="Post_Title" />
+                <ScalarProperty Name="Post_Description" ColumnName="Post_Description" />
+                <ScalarProperty Name="Post_Detail" ColumnName="Post_Detail" />
+                <ScalarProperty Name="Post_Image" ColumnName="Post_Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="N412_Product">
+            <EntityTypeMapping TypeName="AogirishopModel.N412_Product">
+              <MappingFragment StoreEntitySet="N412_Product">
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+                <ScalarProperty Name="Product_Price" ColumnName="Product_Price" />
+                <ScalarProperty Name="Product_PriceNew" ColumnName="Product_PriceNew" />
+                <ScalarProperty Name="Product_Image" ColumnName="Product_Image" />
+                <ScalarProperty Name="Product_Detail" ColumnName="Product_Detail" />
+                <ScalarProperty Name="Product_Description" ColumnName="Product_Description" />
+                <ScalarProperty Name="Product_Country" ColumnName="Product_Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
